@@ -5,8 +5,7 @@ class Contacts {
    public $nome;
    public $email;
    public $telefone;
-   
-
+   public $data;
 
     // Validar dados
    public function setId($id) {
@@ -25,6 +24,10 @@ class Contacts {
     $this->telefone = $telefone;
    }
 
+   public function setData($data){
+    $this->data = $data;
+   }
+
     // Pegar dados
     public function getId(){
         return $this->id;
@@ -40,5 +43,8 @@ class Contacts {
 
     public function getTelefone(){
         return $this->telefone;
+    }
+    public function getData(){
+        return $this->data;
     }
 }

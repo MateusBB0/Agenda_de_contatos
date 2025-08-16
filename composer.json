@@ -1,0 +1,15 @@
+{
+    "name": "mateuss/agenda_de_contatos",
+    "autoload": {
+        "psr-4": {
+            "Mateuss\\AgendaDeContatos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mateus Barros Brasil",
+            "email": "mateusbarrosb0@gmail.com"
+        }
+    ],
+    "require": {}
+}
