@@ -1,18 +1,25 @@
-<h1>Agenda</h1>
-<form action="../Controllers/CreateController.php" method="POST">
+<?php
+use Controllers\ListController;
 
+require("../Controllers/ListController.php");
 
-<label>Nome</label>
-    <input type="text" name="nome" required>
-<br>
+$readContact = new ListController;
 
-<label>Email</label>
-    <input type="email" name="email" required>
-<br>
+foreach ($_SESSION['read'] as $info) {
+    echo $info['nome'] ."<br>";
+    echo $info['email'] ."<br>";
+    echo $info['telefone'] ."<br>";
+    echo "<form action='edit.php' method='POST'>
+    
+        <input type='hidden' value=".$info['id']." name='id'>
+        <input type='submit' value='Editar'>
+        
+        </form>";
+    echo "<hr>";
+}   
 
-<label>Telefone</label>
-    <input type="tel" name="tel" pattern="[0-9]{2} [9]{1}[0-9]{4}-[0-9]{4}" required placeholder="Exemplo: (22) 92222-0982">
-    <br>
-    <input type="submit" value="Enviar" name="submit">
+echo "<div>
+    <a href='newContact.php'>Adicionar um novo contato</a>
+</div>";
 
-</form>
+?>

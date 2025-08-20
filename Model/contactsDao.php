@@ -2,6 +2,7 @@
 namespace Model;
 use Model\Contacts;
 use Controller\Connection;
+// require("contacts.php");
 // Crud para o banco de dados
 class contactsDao extends Contacts{
     public function create(Contacts $c){
@@ -18,18 +19,37 @@ class contactsDao extends Contacts{
 
         $stmt->execute();
         $_SESSION['data'] = $d;
+        
     }
 
     public function read(){
         // Analisar dados para a barra de pesquisa
+        $sql = "SELECT * FROM contatos";
+        $stmt = Connection::getConn()->prepare($sql);
+        $stmt->execute();
+        if($stmt->rowCount() >0){
+            $arrayResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $arrayResult;
+        }else{
+            echo "Houve uma falha na exposição dos contatos";
+        }
 
     }
 
     public function update(Contacts $c){
-        // Editar contatos
+        global $id;
+        $sql = "UPDATE contatos SET nome = ?, email = ?, telefone = ? WHERE id= '".$id."'";
+        $stmt = Connection::getConn()->prepare($sql);
+        $stmt->bindValue(1, $c->getNome());
+        $stmt->bindValue(2, $c->getEmail());
+        $stmt->bindValue(3, $c->getTelefone());
+
+        $stmt->execute();
+        
     }
 
     public function delete($id){
         // Deletar contatos
+
     }
 }
