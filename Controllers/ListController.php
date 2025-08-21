@@ -21,6 +21,9 @@ require ('../Model/contactsDao.php');
         case 'updateSubmit':
             $this->updateSubmit();
             break;
+        case 'deleteSubmit':
+            $this->deleteSubmit();
+            break;            
         default:
             echo "Ação Inválida";
             break;
@@ -39,45 +42,63 @@ require ('../Model/contactsDao.php');
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
             'tel' => $_POST['tel'],
-            'data' => $_SESSION['data']
+            // 'data' => $_SESSION['data']
         ];
         
         $newContact = new Contacts();
         $newContact->setNome($contato['nome']);
         $newContact->setEmail($contato['email']);
         $newContact->setTelefone($contato['tel']);
-        $newContact->setData($contato['data']);
+        // $newContact->setData($contato['data']);
 
 
         $createContact = new contactsDao();
-        $createContact->create($newContact);
+        return $createContact->create($newContact);
 
         // echo "Contato adicionado com sucesso!";
         header("Location: ../View/index.php");
         
 }
-
+// Mostrar todos os contatos
 public function showContacts() {
     $readAllContacts = new contactsDao();
-    $_SESSION['read'] = $readAllContacts->read();
+    return $readAllContacts->read();
     header("Location: ../View/index.php");
 }
+
+// Submit do formulário edit.php
 public function updateSubmit(){
+    global $id;
+    $id =  $_SESSION['id'];
+    if(isset($id)){
         $editContact = [
+            // 'id' => $id,
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
-            'tel' => $_POST['tel']
+            'tel' => $_POST['tel'],
+            'data' => $_POST['data']
+
         ];
-        $editContact = new Contacts();
-        $editContact->setNome($editContact['nome']);
-        $editContact->setEmail($editContact['email']);
-        $editContact->setTelefone($editContact['tel']);
-        $editContact->setData($editContact['data']);
+        $UpContact = new Contacts();
+        $UpContact->setNome($editContact['nome']);
+        $UpContact->setEmail($editContact['email']);
+        $UpContact->setTelefone($editContact['tel']);
+        $UpContact->setData($editContact['data']);
 
         $updateContact = new contactsDao();
-        $updateContact->update($editContact);
+        $updateContact->update($UpContact);
+        return header("Location:../View/index.php");
 
-}  
+    }else{
+        echo "ERRO";
+    }
+
+} 
+public function deleteSubmit($id) {
+    if(isset($id)){
+
+    }
+}
 
 }
 if(isset($_POST['action'])){

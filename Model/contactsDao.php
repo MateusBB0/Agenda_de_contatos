@@ -5,8 +5,9 @@ use Controller\Connection;
 // require("contacts.php");
 // Crud para o banco de dados
 class contactsDao extends Contacts{
+    // Criar o contato
     public function create(Contacts $c){
-        // Criar o contato
+        
         date_default_timezone_set('America/Sao_Paulo');
         $d = date('Y:m:d h:i:s');
 
@@ -44,12 +45,16 @@ class contactsDao extends Contacts{
         $stmt->bindValue(2, $c->getEmail());
         $stmt->bindValue(3, $c->getTelefone());
 
-        $stmt->execute();
+        return $stmt->execute();
         
     }
 
     public function delete($id){
-        // Deletar contatos
+        $sql = "DELETE FROM contatos WHERE id = ? ";
+        $stmt = Connection::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+        return header('location: ../View/index.php');
 
     }
 }

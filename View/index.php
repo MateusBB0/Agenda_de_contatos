@@ -4,8 +4,8 @@ use Controllers\ListController;
 require("../Controllers/ListController.php");
 
 $readContact = new ListController;
-
-foreach ($_SESSION['read'] as $info) {
+$_SESSION['read'] = $readContact->showContacts();
+foreach ($readContact->showContacts() as $info) {
     echo $info['nome'] ."<br>";
     echo $info['email'] ."<br>";
     echo $info['telefone'] ."<br>";
@@ -13,6 +13,14 @@ foreach ($_SESSION['read'] as $info) {
     
         <input type='hidden' value=".$info['id']." name='id'>
         <input type='submit' value='Editar'>
+        
+        </form>";
+
+    echo "<form action='..Controllers/ListController.php' method='POST'>
+        <input type='hidden' value=".$info['id']." name='id'>
+        <input type='hidden' name ='action' value='deleteSubmit'>
+
+        <input type='submit' value='Deletar'>
         
         </form>";
     echo "<hr>";
