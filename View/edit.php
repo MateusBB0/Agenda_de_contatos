@@ -1,6 +1,6 @@
 <?php
 
-use Controller\Connection;
+use Controllers\Connection;
 use Model\Contacts;
 
 require("../Controllers/connection.php");

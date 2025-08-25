@@ -94,9 +94,16 @@ public function updateSubmit(){
     }
 
 } 
-public function deleteSubmit($id) {
-    if(isset($id)){
-
+public function deleteSubmit() {
+    if(isset($_POST['id'])){
+    $id =$_POST['id'];
+    $deleteContact = new contactsDao();
+    $deleteContact->delete($id);
+    // return header('Location../View/index.php');
+    echo 'lllll';
+    echo $id;
+    }else{
+        echo "ERRO: Contato não foi deletado!";
     }
 }
 

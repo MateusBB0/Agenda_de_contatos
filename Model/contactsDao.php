@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 use Model\Contacts;
-use Controller\Connection;
+use Controllers\Connection;
 // require("contacts.php");
 // Crud para o banco de dados
 class contactsDao extends Contacts{

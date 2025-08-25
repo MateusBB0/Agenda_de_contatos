@@ -1,10 +1,12 @@
 <?php
 use Controllers\ListController;
-
 require("../Controllers/ListController.php");
+include_once("layout/searchContact.php");
+
 
 $readContact = new ListController;
 $_SESSION['read'] = $readContact->showContacts();
+
 foreach ($readContact->showContacts() as $info) {
     echo $info['nome'] ."<br>";
     echo $info['email'] ."<br>";
@@ -16,10 +18,9 @@ foreach ($readContact->showContacts() as $info) {
         
         </form>";
 
-    echo "<form action='..Controllers/ListController.php' method='POST'>
-        <input type='hidden' value=".$info['id']." name='id'>
+    echo "<form action='../Controllers/ListController.php' method='POST'>
+        <input type='hidden' value='".$info['id']."' name='id'>
         <input type='hidden' name ='action' value='deleteSubmit'>
-
         <input type='submit' value='Deletar'>
         
         </form>";

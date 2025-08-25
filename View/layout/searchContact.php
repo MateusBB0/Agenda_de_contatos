@@ -1,7 +1,10 @@
-<form action="../Controllers/SearchController.php" method="POST">
+<?php 
+include("../Controllers/searchController.php");
+?>
+<form action="" method="GET">
 
     <input type="search" name="search" id="search" placeholder="Pesquisar">
-    <button onclick="searchData()">
+     <button onclick="searchData()">
         <p>pesquisa</p>
     </button>
 
@@ -9,8 +12,17 @@
 
 <script>
     var pesquisa = document.getElementById("search");
+
+    pesquisa.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            searchData();
+        }   
+    });
+
+
     function searchData(){
-        window.location = 'SearchController.php?search=' + search.value;
+        window.location = 'SearchContact.php?search='+pesquisa.value;
+
     }
 
 </script>
