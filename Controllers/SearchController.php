@@ -1,6 +1,6 @@
-
 <?php
-// require('connection.php');
+require('connection.php');
+include("../View/layout/searchContact.php");
 use Controllers\Connection;
 class SearchController{
 

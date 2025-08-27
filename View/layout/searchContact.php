@@ -1,7 +1,5 @@
-<?php 
-include("../Controllers/searchController.php");
-?>
-<form action="" method="GET">
+
+<form action="../Controllers/searchController.php" method="GET">
 
     <input type="search" name="search" id="search" placeholder="Pesquisar">
      <button onclick="searchData()">
@@ -21,7 +19,7 @@ include("../Controllers/searchController.php");
 
 
     function searchData(){
-        window.location = 'SearchContact.php?search='+pesquisa.value;
+        window.location = 'SearchController.php?search='+pesquisa.value;
 
     }
 

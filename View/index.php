@@ -1,5 +1,15 @@
 <?php
 use Controllers\ListController;
+// Definir o título
+$title = "Agenda";
+include_once("layout/top_bar.php");
+?>
+
+<body>
+    
+
+<?php
+
 require("../Controllers/ListController.php");
 include_once("layout/searchContact.php");
 
@@ -32,3 +42,6 @@ echo "<div>
 </div>";
 
 ?>
+
+</body>
+</html>
