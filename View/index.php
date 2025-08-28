@@ -6,7 +6,6 @@ include_once("layout/top_bar.php");
 ?>
 
 <body>
-    
 
 <?php
 

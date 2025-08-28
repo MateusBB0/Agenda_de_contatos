@@ -1,4 +1,4 @@
-
+<?php ?>
 <form action="../Controllers/searchController.php" method="GET">
 
     <input type="search" name="search" id="search" placeholder="Pesquisar">
