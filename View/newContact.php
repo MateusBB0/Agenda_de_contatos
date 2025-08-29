@@ -27,7 +27,7 @@ include('layout/searchContact.php');
 
 <form action="../Controllers/ListController.php" method="POST">
 
-    <div class="mb-5 mt-10">
+    <div class="mb-5 mt-15">
     <label class="text-sky-50">Nome</label>
     <input type="text" name="nome" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nome">
     </div>
@@ -47,7 +47,7 @@ include('layout/searchContact.php');
 
     <div class="flex! flex-col">
     <input type="submit" value="Enviar" name="submit" class=" text-white border-2 border-amber-50 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
-    <a href='index.php' class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-50 text-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Home page</a>
+    <a href='index.php' class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-20 text-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Home page</a>
     </div>
 </form>
 

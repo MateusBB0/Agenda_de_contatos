@@ -2,7 +2,7 @@
 use Controllers\ListController;
 // Definir o título
 $title = "Agenda";
-include_once("layout/top_bar.php");
+// include_once("layout/top_bar.php");
 ?>
 
 <body>

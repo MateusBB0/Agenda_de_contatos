@@ -1,5 +1,6 @@
 <?php
 require('connection.php');
+$title = $_GET['search'];
 include("../View/layout/searchContact.php");
 use Controllers\Connection;
 class SearchController{
