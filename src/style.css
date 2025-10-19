@@ -1,15 +1,22 @@
 @import "tailwindcss";
 
 *{
+    box-sizing: border-box;
     font-family: "Lato", sans-serif;
+    
 }
 
 .table-class{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          
+}
 
-    & .tr{
-        display: ;
-        
-    }
-
-   
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+           .table-class{
+                top: 70%;
+                width: 50vw;
+           }
 }
