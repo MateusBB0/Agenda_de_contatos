@@ -8,7 +8,7 @@
 
 .table-class{
           position: absolute;
-          top: 50%;
+          top: 70%;
           left: 50%;
           transform: translate(-50%, -50%);
           
@@ -16,7 +16,14 @@
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
            .table-class{
-                top: 70%;
-                width: 50vw;
+                top: 50%;
+                width: 90vw;
+                
            }
+}
+.center_section{
+position: relative;
+          top: 20vh;
+          left: 60%;
+          transform: translate(-50%, -50%);
 }

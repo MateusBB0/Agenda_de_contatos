@@ -3,7 +3,7 @@ include('../View/layout/top_bar.php');
 ?>
 <body>
     <!-- Table-fixed: para renderizar mais rápido!! -->
-     <div class='table-class rounded-3xl mt-5 ml-6 dark:bg-gray-500 w-6x1'>
+     <div class='table-class rounded-3xl mt-5 ml-6 dark:bg-gray-500 w-4xl'>
         <h1 class=" pb-5 text-center text-white text-5xl rounded-t-3xl! bottom-px bg-gray-700 border-r-zinc-700 border-b-1">
             <span class="material-symbols-outlined text-5xl!">
                 person_book
@@ -19,7 +19,7 @@ include('../View/layout/top_bar.php');
                 <th></th> <th></th>   
             </tr>
         </thead>
-        <tr class="tr border-white border-b-2">
+        <tr class="tr border-white border-b-2 size-full">
             <td class="px-10 py-10 text-xl">Mateus</td>
             <td class="px-10 py-10 text-xl">mateus@gmail.com</td>
             <td class="px-10 py-10 text-xl">21 0983756747</td>
@@ -38,7 +38,7 @@ include('../View/layout/top_bar.php');
             <td><button type="button" class="mx-7.5 px-2.5 py-2.5 text-xl focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Deletar</button></td> 
         </tr>
         <tr class="tr  border-white border-b-2">
-            <td class="px-10 py-10 text-xl">Marcos</td>
+            <td class="px-10 py-10 text-xl ">Marcos</td>
             <td class="px-10 py-10 text-xl">marcos@gmail.com</td>
             <td class="px-10 py-10 text-xl">21 3333333333</td>
 

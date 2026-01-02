@@ -2,10 +2,9 @@
 use Controllers\ListController;
 // Definir o título
 $title = "Agenda";
-// include_once("layout/top_bar.php");
 ?>
 
-<body>
+<body class="bg-gray-950">
 
 <?php
 
@@ -38,13 +37,13 @@ foreach ($readContact->showContacts() as $info) {
         
     echo ' 
         <tr class="tr border-white border-b-2">
-            <td class="px-10 py-10 text-xl">'. $info['nome'] . '</td>
-            <td class="px-10 py-10 text-xl">'.$info['email'].'</td>
-            <td class="px-10 py-10 text-xl">'.$info['telefone'].'</td>
+            <td class="px-10 py-10 text-xl text-white">'. $info['nome'] . '</td>
+            <td class="px-10 py-10 text-xl text-white">'.$info['email'].'</td>
+            <td class="px-10 py-10 text-xl text-white">'.$info['telefone'].'</td>
             <td>
                 <form action="edit.php" method="POST">
                 <input type="hidden" value='.$info['id'].' name="id">
-                <input type="submit" class=" mx-7.5 py-2.5 px-2.5 text-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" value="Editar">
+                <input type="submit" class=" mx-7.5 py-2.5 px-2.5 text-xl text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:focus:ring-gray-700 dark:border-gray-700" value="Editar">
                 </form>
             
             </td>
@@ -66,9 +65,9 @@ foreach ($readContact->showContacts() as $info) {
     </div>
 
 <?php
-echo "<div>
-    <a href='newContact.php'>Adicionar um novo contato</a>
-</div>";
+// echo "<div>
+//     <a href='newContact.php' class='focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'>+ Novo contato</a>
+// </div>";
 
 ?>
 
