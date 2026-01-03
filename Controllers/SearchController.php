@@ -29,9 +29,9 @@ if(isset($_GET['search'])){
     $prepare_search->execute();
     
     if ($prepare_search->rowCount() > 0) {
-       echo"<section class='center_section inline-block w-2xl'>";
+       echo"<section class='center_section inline-block w-xl' >";
         foreach ($prepare_search as $contact) {
-           echo '<div class="grid content-center dark:bg-gray-800 max-w-sm p-6 rounded-md hover:bg-neutral-secondary-medium">';
+           echo '<div class="grid content-center dark:bg-gray-800 max-w-sm p-6 rounded-md hover:bg-neutral-secondary-medium " >';
            echo "<p class='mb-3 text-2xl font-semibold tracking-tight text-heading leading-8'> {$contact['nome']}</p>";
            echo "<p class='text-body'>{$contact['email']}</p>";
            echo "<p class='text-body'>{$contact['telefone']}</p>";
