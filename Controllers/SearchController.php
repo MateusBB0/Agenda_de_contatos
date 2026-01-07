@@ -29,13 +29,13 @@ if(isset($_GET['search'])){
     $prepare_search->execute();
     
     if ($prepare_search->rowCount() > 0) {
-       echo"<section class='center_section inline-block w-xl' >";
+       echo"<section class='max-w-6xl mx-auto px-4 mt-8' >";
         foreach ($prepare_search as $contact) {
-           echo '<div class="grid content-center dark:bg-gray-800 max-w-sm p-6 rounded-md hover:bg-neutral-secondary-medium " >';
-           echo "<p class='mb-3 text-2xl font-semibold tracking-tight text-heading leading-8'> {$contact['nome']}</p>";
-           echo "<p class='text-body'>{$contact['email']}</p>";
-           echo "<p class='text-body'>{$contact['telefone']}</p>";
-           echo "</div><br>";
+           echo '<div class="bg-gray-900 rounded-xl shadow-md p-5 mb-4 border border-gray-800 hover:bg-gray-800 transition " >';
+           echo "<p class=text-lg font-semibold text-white mb-1'> {$contact['nome']}</p>";
+           echo "<p class='text-sm text-gray-300'>{$contact['email']}</p>";
+           echo "<p class='text-sm text-gray-400'>{$contact['telefone']}</p>";
+           echo "</div>";
            
         }
         echo"</section>";
