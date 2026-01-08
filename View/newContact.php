@@ -47,8 +47,9 @@ include('layout/searchContact.php');
     <!-- <input type="submit" value="Enviar" name="submit" class="text-stone-50 bg-slate-950 hover:bg-slate-900 pl-8 pr-8 p-4 items-center rounded-xl"> -->
 
     <div class="flex justify-end gap-3 pt-4">
-    <input type="submit" value="Enviar" name="submit" class="px-4 py-2 text-sm rounded-md border border-gray-600 text-gray-300 hover:bg-gray-800 transition">
-    <a href='index.php' class="px-5 py-2 text-sm font-medium rounded-md bg-blue-600 text-whitehover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition">Home page</a>
+        <a href='index.php' class="px-4 py-2 text-sm rounded-md border border-gray-600 text-gray-300 hover:bg-gray-800 transition">Home page</a>
+    <input type="submit" value="Enviar" name="submit" class="px-5 py-2 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700  focus:ring-blue-300 transition">
+    
     </div>
 </form>
 

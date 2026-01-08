@@ -51,13 +51,10 @@ require ('../Model/contactsDao.php');
         $newContact->setTelefone($contato['tel']);
         // $newContact->setData($contato['data']);
 
-
         $createContact = new contactsDao();
         return $createContact->create($newContact);
 
-        // echo "Contato adicionado com sucesso!";
-        header("Location: ../View/index.php");
-        
+                
 }
 // Mostrar todos os contatos
 public function showContacts() {

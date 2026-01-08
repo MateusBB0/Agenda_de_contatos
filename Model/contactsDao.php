@@ -21,6 +21,8 @@ class contactsDao extends Contacts{
         $stmt->execute();
         $_SESSION['data'] = $d;
         
+     header("Location: ../View/index.php");
+
     }
 
     public function read(){

@@ -22,7 +22,8 @@ class SearchController{
 
 public function showSearchBar(){
 if(isset($_GET['search'])){
-    $search = $_GET['search'];
+    
+    $search = $_GET['search'];  
     $sql_search = "SELECT * FROM contatos WHERE nome = '".$search."' OR email = '".$search."' ";
     
     $prepare_search = Connection::getConn()->prepare($sql_search);
