@@ -1,30 +1,13 @@
 <?php
-
-use Controllers\Connection;
-use Model\Contacts;
+use Controllers\ListController;
 require("layout/top_bar.php");
-require("../Controllers/connection.php");
+require("../Controllers/ListController.php");
 
-    session_start();
-
-    $id = $_POST['id'];
-    $_SESSION['id'] = $id;
-
-    $selectContact = "SELECT * FROM contatos WHERE id = :id";
-    $startActionContact = Connection::getConn()->prepare($selectContact);
-    $startActionContact->bindParam(':id', $id, PDO::PARAM_INT);
-    $startActionContact->execute();
-
-    if($startActionContact->rowCount() >0){
-            $arrayResult = $startActionContact->fetchAll(\PDO::FETCH_ASSOC);
-            //  $arrayResult;
-        }else{
-            echo "Houve uma falha na exposição dos contatos";
-        }
-
-
-?>
-<?php foreach($arrayResult as $info): ?>
+    $showContact = new ListController();
+    $show = $showContact->showOnlyOneContact() ;
+    
+   ?>
+<?php foreach($show as $info): ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

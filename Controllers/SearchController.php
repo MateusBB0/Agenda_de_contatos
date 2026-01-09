@@ -1,3 +1,8 @@
+<?php 
+namespace Controllers;
+use Controllers\Connection;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,39 +22,20 @@
 require('connection.php');
 $title = $_GET['search'];
 include("../View/layout/searchContact.php");
-use Controllers\Connection;
 class SearchController{
 
 public function showSearchBar(){
 if(isset($_GET['search'])){
-    
+    global $prepare_search;
     $search = $_GET['search'];  
     $sql_search = "SELECT * FROM contatos WHERE nome = '".$search."' OR email = '".$search."' ";
     
     $prepare_search = Connection::getConn()->prepare($sql_search);
-    $prepare_search->execute();
+    return $prepare_search->execute();
     
-    if ($prepare_search->rowCount() > 0) {
-       echo"<section class='max-w-6xl mx-auto px-4 mt-8' >";
-        foreach ($prepare_search as $contact) {
-           echo '<div class="bg-gray-900 rounded-xl shadow-md p-5 mb-4 border border-gray-800 hover:bg-gray-800 transition " >';
-           echo "<p class=text-lg font-semibold text-white mb-1'> {$contact['nome']}</p>";
-           echo "<p class='text-sm text-gray-300'>{$contact['email']}</p>";
-           echo "<p class='text-sm text-gray-400'>{$contact['telefone']}</p>";
-           echo "</div>";
-           
-        }
-        echo"</section>";
-
-    }else{
-       header("location:../View/index.php");
-    }
-    
+  
     }
 }
 }
-$search = new SearchController();
-$search->showSearchBar();
-?>
 
-</body>
+

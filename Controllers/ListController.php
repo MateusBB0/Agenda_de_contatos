@@ -2,6 +2,8 @@
 namespace Controllers;
 use Model\Contacts;
 use Model\contactsDao;
+use Controllers\Connection;
+
 
 session_start();
 
@@ -63,6 +65,24 @@ public function showContacts() {
     header("Location: ../View/index.php");
 }
 
+// Ler os dados do contato escolhido para editar
+public function showOnlyOneContact(){
+    $id = $_POST['id'];
+    $_SESSION['id'] = $id;
+
+    $selectContact = "SELECT * FROM contatos WHERE id = :id";
+    $startActionContact = Connection::getConn()->prepare($selectContact);
+    $startActionContact->bindParam(':id', $id, \PDO::PARAM_INT);
+    $startActionContact->execute();
+
+    if($startActionContact->rowCount() > 0){
+            $arrayResult = $startActionContact->fetchAll(\PDO::FETCH_ASSOC);
+            return $arrayResult;
+        }else{
+            echo "Houve uma falha na exposição dos contatos";
+        }
+}
+
 // Submit do formulário edit.php
 public function updateSubmit(){
     global $id;
@@ -91,6 +111,7 @@ public function updateSubmit(){
     }
 
 } 
+// Deletar contato
 public function deleteSubmit() {
     if(isset($_POST['id'])){
     $id =$_POST['id'];

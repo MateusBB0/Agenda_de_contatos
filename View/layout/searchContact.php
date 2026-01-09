@@ -1,7 +1,7 @@
 <?php 
 include("../View/layout/top_bar.php");
 ?>
-<form action="../Controllers/searchController.php" method="GET" class="max-w-6xl mx-auto mt-6 px-4">   
+<form action="../View/findContacts.php" method="GET" class="max-w-6xl mx-auto mt-6 px-4">   
 
 <section class="flex flex-col md:flex-row gap-3">
 
@@ -41,8 +41,10 @@ include("../View/layout/top_bar.php");
 
 
     function searchData(){
-        window.location = 'SearchController.php?search='+pesquisa.value;
+        window.location = 'findContacts.php?search='+pesquisa.value;
 
     }
 
 </script>
+
+
