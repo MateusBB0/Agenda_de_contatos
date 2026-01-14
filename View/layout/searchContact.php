@@ -29,7 +29,6 @@ include("../View/layout/top_bar.php");
 
 
 
-
 <script>
     var pesquisa = document.getElementById("search");
 
